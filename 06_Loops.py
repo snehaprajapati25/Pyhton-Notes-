@@ -1,5 +1,5 @@
 # Loops in Python
-# oops in Python allow us to execute a block of code multiple times without rewriting it
+# Loops in Python allow us to execute a block of code multiple times without rewriting it
 
 # Types of Loop
 # 1. For Loop
@@ -174,5 +174,70 @@ for i in a:
         char+=1
     else:
         spchar+=1
-        
+
 print(f"your digits are {dig}\n your alphabets are {char}\n ypur special characters are {spchar}")
+
+
+
+# 2. WHILE LOOP
+# Q1. Separate each digit of a number and print it on the new line.
+
+a = 256
+
+while a>0:
+    digit = a%10
+    print(digit)
+    a//=10
+
+
+# Q2. Accept a number and print its reverse
+a = 256
+rev = 0
+
+while a>0:
+    lastDigit = a%10
+    rev = rev*10 + lastDigit
+    a//=10
+
+print(rev)
+
+
+# Q3. Accept a number and check if it is a pallindromic number (If number and its reverse are equal).
+a = int(input("Tell your number: "))
+
+copy = a
+rev = 0
+
+while a>0:
+    lastDigit = a%10
+    rev = rev*10 + lastDigit
+    a//=10
+
+if rev == copy:
+    print(f"{copy} is a pallindromic numbetr")
+else:
+    print(f"{copy} is not a pallindromic numbetr")
+
+
+# Q4. Create a random number guessing game with python.
+import random
+
+num = random.randint(1, 11)
+
+tries = 0
+
+while True:
+    guess = int(input("Please enter your guess number between 1 and 10: "))
+
+    if(num == guess):
+        tries +=1
+        print(f"You r right, you guessed the number in {tries} tries")
+        break
+
+    elif num<guess:
+        tries+=1
+        print('go a little lower')
+
+    else:
+        tries+=1
+        print("go a little higher")
